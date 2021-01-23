@@ -4,8 +4,14 @@ html {
 body {
   height: 100%;
   margin: 0;
-  background: linear-gradient(-25deg, #17dde6, #0a54b4);
+  background: radial-gradient(#05efea, #05d2ff);
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

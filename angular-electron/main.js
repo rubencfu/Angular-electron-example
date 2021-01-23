@@ -7,7 +7,7 @@ createWindow = () => {
         width: 800,
         height: 600,
         title: "Angular and Electron",
-        resizable: true,
+        resizable: false,
         webPreferences: {
             nodeIntegration: true
         }
@@ -16,6 +16,8 @@ createWindow = () => {
     appWin.loadURL(`file://${__dirname}/dist/index.html`);
 
     appWin.setMenu(null);
+
+    appWin.webContents.openDevTools();
 
     appWin.on("closed", () => {
         appWin = null;
