@@ -1,4 +1,4 @@
-const { app, ipcMain, BrowserWindow, Menu } = require("electron");
+const { app, ipcMain, BrowserWindow } = require("electron");
 
 let appWin;
 
@@ -11,10 +11,14 @@ createWindow = () => {
         webPreferences: {
             nodeIntegration: true
         }
-    })
-}
+    });
+    
+    appWin.loadURL(`file://${__dirname}/dist/index.html`);
 
-appWin.loadURL('file://'+__dirname+'dist/index.html');
+    appWin.on("closed", () => {
+        appWin = null;
+    });
+}
 
 app.on("ready", createWindow);
 
