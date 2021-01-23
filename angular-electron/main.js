@@ -15,6 +15,8 @@ createWindow = () => {
     
     appWin.loadURL(`file://${__dirname}/dist/index.html`);
 
+    appWin.setMenu(null);
+
     appWin.on("closed", () => {
         appWin = null;
     });
