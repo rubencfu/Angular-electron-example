@@ -1,3 +1,4 @@
 <div class="test-container">
-    <button class="ping">PING</button>
+    <button (click)="ping()" class="ping">PING</button>
+    <div *ngIf="pong" class="pong">PONG!</div>
 </div>

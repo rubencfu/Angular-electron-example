@@ -19,6 +19,21 @@
   color: white;
 }
 
+.pong {
+  border: none;
+  font-weight: bold;
+  text-shadow: 0px 0px 6px black;
+  position: absolute;
+  font-size: 3vw;
+  letter-spacing: 7px;
+  bottom: 35%;
+  width: 20%;
+  padding: 2%;
+  border-radius: 5px;
+  outline: none;
+  color: white;
+}
+
 .ping:hover {
   cursor: pointer;
   background: linear-gradient(5deg, rgb(15, 15, 15), #4b4b4b);

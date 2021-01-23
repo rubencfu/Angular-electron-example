@@ -37,3 +37,5 @@ app.on("activate", () => {
       createWindowLogin();
     }
 });
+
+ipcMain.on("message", (event) => event.reply("reply", "pong"));

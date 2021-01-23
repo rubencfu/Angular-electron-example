@@ -1,4 +1,3 @@
-  
 import { Injectable } from "@angular/core";
 import { IpcRenderer} from "electron";
 
@@ -23,14 +22,12 @@ export class IpcService {
     if (!this.ipc) {
       return;
     }
-
     this.ipc.on(channel, listener);
   }
   public once(channel: string, listener: any): void {
     if (!this.ipc) {
       return;
     }
-
     this.ipc.once(channel, listener);
   }
   public send(channel: string, ...args: any[]): void {
@@ -38,5 +35,12 @@ export class IpcService {
       return;
     }
     this.ipc.send(channel, ...args);
+  }
+
+  public removeAllListeners(channel: string): void {
+    if (!this.ipc) {
+      return;
+    }
+    this.ipc.removeAllListeners(channel);
   }
 }
