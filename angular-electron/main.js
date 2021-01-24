@@ -40,12 +40,6 @@ app.on("window-all-closed", () => {
     }
 });
 
-app.on("activate", () => {
-    if (loginWin === null) {
-      createWindowLogin();
-    }
-});
-
 /* ipcMain is listening the "message" channel, and when the message arrives, 
   it replies with "pong" */
 ipcMain.on("message", (event) => event.reply("reply", "pong"));
