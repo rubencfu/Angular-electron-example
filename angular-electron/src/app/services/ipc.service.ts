@@ -7,6 +7,8 @@ import { IpcRenderer} from "electron";
 export class IpcService {
   private ipc: IpcRenderer;
   constructor() {
+    /*If window.require is available, it means that electron is running, 
+      then ipc will be loaded. */
     if (window.require) {
       try {
         this.ipc = window.require("electron").ipcRenderer;

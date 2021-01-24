@@ -57,6 +57,11 @@
   background: #09729b;
 }
 
+.save-btn:disabled {
+  background: gray;
+  cursor: default;
+}
+
 .game-btn:active {
   border: 60px solid #00c0c5;
 }

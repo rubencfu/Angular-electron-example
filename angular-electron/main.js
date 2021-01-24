@@ -1,7 +1,15 @@
 const { app, ipcMain, BrowserWindow } = require("electron");
+const Store = require("electron-store");
 
 let appWin;
+const store = new Store();
 
+//If the record does not exist, it is created with a default value of 0.
+if (!store.get("clicks")) {
+    store.set("clicks", 0);
+}
+
+//This function creates the window and its properties.
 createWindow = () => {
     appWin = new BrowserWindow({
         width: 800,
@@ -38,4 +46,6 @@ app.on("activate", () => {
     }
 });
 
+/* ipcMain is listening the "message" channel, and when the message arrives, 
+  it replies with "pong" */
 ipcMain.on("message", (event) => event.reply("reply", "pong"));
